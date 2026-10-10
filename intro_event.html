@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="box">box1</div>
+        <div class="box">box2</div>
+        <div class="box">box3</div>
+    </div>
+    <span> click me!</span>
+    <input type="text" placeholder="Type something...">
+
+    <form id="myForm">
+        <input type="text" placeholder="Form input...">
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        // click event
+//1. addEventListener('click', function(){})
+        const span = document.querySelector('span');
+        span.addEventListener('click', () => {
+            span.style.backgroundColor = 'blue';
+            span.style.color = 'yellow';
+        })
+
+        //2. keyup event and keydown event
+        const input = document.querySelector('input');
+        input.addEventListener('keyup', (event) => {
+            console.log('keyup',event.key);
+        })
+
+        const input2 = document.querySelector('input');
+        input2.addEventListener('keydown', (event) => {
+            console.log('keydown',event.key);
+        })
+
+        //3. mouseover event and mouseout event
+        const box1 = document.querySelector('.box');
+        box1.addEventListener('mouseover', () => {
+            box1.style.backgroundColor = 'red';
+        })
+
+        box1.addEventListener('mouseout', () => {
+            box1.style.backgroundColor = "lightblue";
+        })
+
+        //4. submit event
+        const form = document.querySelector('#myForm');
+        form.addEventListener('submit', (event) => {
+            event.preventDefault();
+            console.log('form submitted');
+        })
+
+    </script>
+</body>
+</html>
